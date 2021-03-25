@@ -51,7 +51,12 @@ Preset.edit("package.json").update((content, preset) => {
 }).withoutTitle();
 
 Preset.extract("windi.config.cjs").withTitle("Adding Windi CSS config file");
-Preset.extract(".vscode/extensions.json").withTitle("Suggesting the Windi CSS IntelliSense extension").ifNotOption(EXCLUDE_EXAMPLES);
+Preset.group((preset) => {
+	preset.extract(".vscode/extensions.json").whenConflict("skip");
+	preset.editJson(".vscode/extensions.json").merge({
+		recommendations: ["voorjaar.windicss-intellisense"],
+	});
+}).withTitle("Suggesting the Windi CSS IntelliSense extension").ifNotOption(EXCLUDE_EXAMPLES);
 
 Preset.editJson("package.json").merge({
 	devDependencies: {
