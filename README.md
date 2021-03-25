@@ -29,7 +29,7 @@ npx svelte-add windicss
 After the preset runs,
 * You can use Windi utility classes like `bg-blue-700` in the markup (components, routes, `app.html`).
 
-* You can [configure Windi CSS](https://windicss.org/guide/configuration.html) in the `windi.config.cjs` file.
+* You can [configure Windi](https://windicss.org/guide/configuration.html) in the `windi.config.cjs` file.
 
 * Your Windi CSS will be purged for production builds.
 
