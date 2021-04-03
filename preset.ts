@@ -2,6 +2,7 @@ import { Preset, color } from "apply";
 
 
 const newPreprocessor = `windicss({
+			kit: true,
 			config: "windi.config.cjs",
 		})`;
 
@@ -60,8 +61,8 @@ Preset.group((preset) => {
 
 Preset.editJson("package.json").merge({
 	devDependencies: {
-		"svelte-windicss-preprocess": "^3.1.2",
-		"windicss": "^2.5.5",
+		"svelte-windicss-preprocess": "^3.2.0",
+		"windicss": "^2.5.9",
 	},
 }).withTitle("Adding needed dependencies");
 
